@@ -59,7 +59,8 @@ foreach ($events as $event) {
   }
 
   // ConversationサービスのREST API
-  $url = 'https://api.us-south.assistant.watson.cloud.ibm.com/instances/29928bea-9538-4b0c-8a19-21cefb6293a2/v1/workspaces/c4cdcb92-5150-47d1-bec5-c7e6144190b8/message';
+  $url = 'https://api.us-south.assistant.watson.cloud.ibm.com/instances/29928bea-9538-4b0c-8a19-21cefb6293a2/v1/workspaces/' .
+    getenv('WATSON_WORKSPACE_ID') . 'message?version=2020-10-06';
   // 新規セッションを初期化
   $curl = curl_init($url);
 
@@ -70,7 +71,7 @@ foreach ($events as $event) {
       'Content-Type: application/json',
     ),
     // 認証用
-    // CURLOPT_USERPWD => getenv('WATSON_USERNAME') . ':' . getenv('WATSON_PASSWORD'),
+    CURLOPT_USERPWD => 'apikey:' . getenv('WATSON_KEY'),
     // POST
     CURLOPT_POST => true,
     // 内容
