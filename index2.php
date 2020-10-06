@@ -1,5 +1,6 @@
 <?php
 // heroku logs --app herokuのapp-name --tail -s app
+//  heroku pg:psql --app linebot-linked-watson
 
 // Composerでインストールしたライブラリを一括読み込み
 require_once __DIR__ . '/vendor/autoload.php';
