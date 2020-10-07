@@ -5,7 +5,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 // useridを取得等
 $inputString = file_get_contents('php://input');
-eroor_log($inputString)
+error_log($inputString);
 
 // // アクセストークンを使いCurlHTTPClientをインスタンス化
 // $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(getenv('CHANNEL_ACCESS_TOKEN'));
