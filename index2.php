@@ -1,5 +1,5 @@
 <?php
-// heroku logs --app herokuのapp-name --tail -s app
+// heroku logs --app linebot-linked-watson --tail -s app
 //  heroku pg:psql --app linebot-linked-watson
 
 // Composerでインストールしたライブラリを一括読み込み
@@ -87,11 +87,9 @@ foreach ($events as $event) {
   $jsonString = curl_exec($curl);
   // 文字列を連想配列に変換
   $json = json_decode($jsonString, true);
-
   // 会話データを取得
   $conversationId = $json["context"]["conversation_id"];
   $dialogNode = $json["context"]["system"]["dialog_stack"][0]["dialog_node"];
-
   // データベースに保存
   $conversationData = array('conversation_id' => $conversationId, 'dialog_node' => $dialogNode);
   setLastConversationData($event->getUserId(), $conversationData);
