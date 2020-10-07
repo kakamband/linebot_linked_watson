@@ -1,7 +1,7 @@
 <?php
 // heroku logs --app linebot-linked-watson --tail -s app
 // Composerでインストールしたライブラリを一括読み込み
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '../vendor/autoload.php';
 
 // // useridを取得等
 // $inputString = file_get_contents('php://input');
