@@ -41,7 +41,7 @@ foreach ($events as $event) {
     continue;
   }
   // オウム返し
-  $text = $bot->replyText($event->getReplyToken(), $event->getText());
+  $text = $bot->replyText($event->getReplyToken(), "これはbotの中のindex.phpです");
   // $event->getText()
 }
 
